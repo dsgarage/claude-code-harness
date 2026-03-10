@@ -1,0 +1,60 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Bash(*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.unity3d.com)",
+      "WebFetch(domain:docs.unity.cn)",
+      "WebFetch(domain:qiita.com)",
+      "WebFetch(domain:zenn.dev)",
+      "WebFetch(domain:developer.apple.com)",
+      "WebFetch(domain:docs.swift.org)",
+      "WebFetch(domain:www.swift.org)",
+      "WebFetch(domain:reactnative.dev)",
+      "WebFetch(domain:docs.expo.dev)",
+      "WebFetch(domain:zustand.docs.pmnd.rs)",
+      "WebFetch(domain:docs.pmnd.rs)",
+      "WebFetch(domain:r3f.docs.pmnd.rs)",
+      "WebFetch(domain:tanstack.com)",
+      "WebFetch(domain:docs.swmansion.com)",
+      "WebFetch(domain:callstack.github.io)",
+      "WebFetch(domain:jestjs.io)",
+      "WebFetch(domain:react.dev)",
+      "WebFetch(domain:threejs.org)",
+      "WebSearch"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/secrets/**)",
+      "Read(**/*credential*)",
+      "Read(**/*password*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/safe_command.py"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
+  "skipDangerousModePermissionPrompt": true
+}

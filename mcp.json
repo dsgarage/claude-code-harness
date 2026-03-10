@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "unity-mcp-bridge": {
+      "command": "node",
+      "args": ["/Users/daisuketsukada/Documents/dsgarageScript/UnityMCP/mcp-bridge/index.js"],
+      "env": {
+        "UNITY_HTTP_URL": "http://localhost:5051"
+      }
+    },
+    "blender-mcp": {
+      "command": "node",
+      "args": ["/Users/daisuketsukada/Documents/dsgarageScript/BlenderMCP/mcp-bridge/index.js"],
+      "env": {
+        "BLENDER_PORT": "9876"
+      }
+    }
+  }
+}
